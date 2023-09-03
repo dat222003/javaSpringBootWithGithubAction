@@ -11,7 +11,7 @@
     <groupId>com.ledat</groupId>
     <artifactId>GithubActionDemo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>GithubActionDemo</name>
     <description>GithubActionDemo</description>
     <properties>
@@ -46,6 +46,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <executable>true</executable>
+                </configuration>
             </plugin>
         </plugins>
     </build>
