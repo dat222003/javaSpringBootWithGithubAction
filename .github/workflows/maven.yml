@@ -13,6 +13,9 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build with Maven
         run: mvn -B package --file pom.xml
+      - name: Stop previous instance
+        run: |
+          sudo lsof -t -i:8080 | xargs -r sudo kill -9
       - name: Run Spring Boot application
         run: |
-          sudo kill -9 `sudo lsof -t -i:8080` & sudo java -jar target/GithubActionDemo-0.0.1-SNAPSHOT.jar &
+          java -jar target/GithubActionDemo-0.0.1-SNAPSHOT.jar &
