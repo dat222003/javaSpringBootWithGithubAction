@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @GetMapping("/")
     public String hello() {
-        return "this is edited in yml branch";
+        return "edited yml file to stop workflow after run spring boot app";
     }
 }

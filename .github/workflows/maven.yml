@@ -1,4 +1,4 @@
-name: Java CI with Maven and Spring Boot
+name: Java with Maven and Spring Boot
 
 on:
   push:
@@ -17,7 +17,5 @@ jobs:
         run: |
           sudo lsof -t -i:8080 | xargs -r sudo kill -9
       - name: Run Spring Boot application
-        run:
-          java -jar target/GithubActionDemo-0.0.1-SNAPSHOT.jar
-      - name: Stop workflow
-        run: echo "Workflow completed successfully."
+        run: |
+            java -jar target/GithubActionDemo-0.0.1-SNAPSHOT.jar & echo "Spring Boot application started."
